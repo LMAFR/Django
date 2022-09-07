@@ -1,0 +1,75 @@
+.logo {
+    padding: 0;
+    display: block;
+    margin: 0 auto auto 0;
+
+    height: 30px;
+    width: 30px;
+    max-height: 30px;
+    max-width: 30px;
+   }
+
+body {
+    margin:0;
+    overflow: hidden;
+    background-color: rgb(238, 236, 236);
+    color:black;
+    overflow-y: scroll;
+}
+
+.main_container{
+    width: 100%;
+    height: 80%;
+}
+
+.support_container{
+    width: 100%;
+    height: 20%;
+}
+
+.leftpane {
+    width: 13%;
+    height: 148%;
+    float: left;
+    margin: 1%;
+    /* background-color: rosybrown; */
+    /* border-collapse: collapse; */
+}
+
+.middlepane {
+    width: 70%;
+    height: 100%;
+    float: left;
+    /* background-color: royalblue; */
+    /* border-collapse: collapse; */
+}
+
+.rightpane {
+  width: 13%;
+  height: 148%;
+  /* position: relative; */
+  float: right;
+  margin: 1%;
+  /* background-color: yellow; */
+  /* border-collapse: collapse; */
+}
+
+.toppane {
+    width: 100%;
+    height: 350px;
+    border-collapse: collapse;
+    background-color: #4da6ff;
+  }
+
+.bottompane {
+    height: 350px;
+    margin-top: 50%;
+    background-color: green;
+}
+
+/* To be able to adapt the size of the banners depending on the size of the left and rightpanes, let´s define two new classes */
+.leftpane_img,
+.rightpane_img {
+    max-width: 100%;
+    height: 900px;
+}
