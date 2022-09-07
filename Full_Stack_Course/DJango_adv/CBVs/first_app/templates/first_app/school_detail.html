@@ -1,0 +1,23 @@
+{% extends "first_app/first_app.html" %}
+
+{% block body-block %}
+<div>
+    <h1>In this page you will see information about the school you chose:</h1>
+    <p>Name: {{school_details.name}}</p>
+    <p>Principal: {{school_details.principal}}</p>
+    <p>Location: {{school_details.location}}</p>
+    <h2>Students:</h2>
+    <ul>
+        <!-- Here, the "students" method of school_details comes from the related_name we assigned to the Foreign Key in models.py -->
+        {% for student in school_details.students.all %}
+            <li>{{student.name}}. {{student.age}} years old.</li>
+        {% endfor %}
+    </ul>
+</div>
+<div>
+    <p>
+        <a class="btn btn-warning" href="{% url 'first_app:update' pk=school_details.pk %}">Update</a>
+        <a class="btn btn-danger" href="{% url 'first_app:delete' pk=school_details.pk %}">Delete</a>
+    </p>
+</div>
+{% endblock %}

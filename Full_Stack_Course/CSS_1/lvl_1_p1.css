@@ -1,0 +1,23 @@
+/* Selected Tag {
+  Property: Value
+} */
+
+/* Using name color format */
+h1{
+  color: red;
+}
+
+/* Using RGB format */
+li{
+  color: rgb(1, 110, 54);
+}
+
+/* Using alpha (transparency) */
+p{
+  color: rgb(1, 110, 54, 0.3);
+}
+
+/* Using Hexadecimal format */
+h4{
+  color: #34ebdc;
+}

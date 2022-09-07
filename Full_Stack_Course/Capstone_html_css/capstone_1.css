@@ -1,0 +1,39 @@
+body{
+  background-color: black;
+  color: white;
+  text-align: center;
+  /* El profesor simplemente asigna los 4 bordes con "border" y luego sobreescribe
+   top border con 0px, que es más fácil que lo que hago yo a continuación */
+  border-left: 50px solid #42f5f2;
+  border-bottom: 50px solid #42f5f2;
+  border-right: 50px solid #42f5f2;
+  padding: 50px;
+}
+
+p{
+  /* Se usa con la intención de alargar la parte negra con texto, para que note
+  quede un corte negro debajo de la parte azul. */
+  padding-top: 5%;
+  padding-left: 20%;
+  padding-right: 20%;
+}
+
+form{
+  font-size: 1.5em;
+}
+
+#submit{
+  background-color: orange;
+  border-radius: 12px;
+  width: 100px;
+  height: 40px;
+}
+
+input,label{
+  display: block;
+  margin: auto;
+}
+
+label{
+  padding-top: 10px;
+}

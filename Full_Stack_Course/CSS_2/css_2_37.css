@@ -1,0 +1,36 @@
+h1{
+  font-family: 'Comforter', cursive;
+  text-align: center;
+}
+
+table{
+  margin: auto;
+  padding: 10px;
+}
+
+td{
+  background-color: red;
+  width: 200px;
+  height: 300px;
+  border: 10px solid white;
+}
+
+#color_1{
+  background-color: #606C38;
+}
+
+#color_2{
+  background-color: #283618;
+}
+
+#color_3{
+  background-color: #FEFAE0;
+}
+
+#color_4{
+  background-color: #DDA15E;
+}
+
+#color_5{
+  background-color: #BC6C25;
+}

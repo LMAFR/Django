@@ -1,0 +1,1 @@
+This file contains the media files (for example, images) added to the website by the users.

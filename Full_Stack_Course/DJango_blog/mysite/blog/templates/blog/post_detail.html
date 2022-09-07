@@ -1,0 +1,50 @@
+{% extends "blog/base.html" %}
+{% block content %}
+
+<h1 class="post_title loader">{{post.title}}</h1>
+{% if post.published_date %}
+    <div class="date post_date">
+        {{post.published_date}}
+    </div>
+{% else %}
+    <a class="btn btn-primary" href="{% url 'post_publish' pk=post.pk %}">Publish</a>
+{% endif %}
+
+<p class="post_title">{{post.text|safe|linebreaksbr}}</p>
+
+{% if user.is_authenticated %}
+    <a class="btn btn-primary" href="{% url 'post_update' pk=post.pk %}">
+        <!-- The line below adds an icon to the button -->
+        <i class="fa-solid fa-pencil"></i>
+    </a>
+    <a class="btn btn-primary" href="{% url 'post_remove' pk=post.pk %}">
+        <i class="fa-solid fa-trash"></i>
+    </a>
+{% endif %}
+
+<hr>
+
+<a class="btn btn-primary btn-comment" href="{% url 'add_comment_to_post' pk=post.pk %}">Add new comment</a>
+
+<div>
+    {% for comment in post.comments.all %}
+    <br>
+        {% if user.is_authenticated or comment.approved_comment %}
+            {{comment.created_date}}
+                {% if not comment.approved_comment %}
+                    <a class="btn btn-primary" href="{% url 'comment_approve' pk=comment.pk %}">
+                        <i class="fa-solid fa-check"></i>
+                    </a>
+                    <a class="btn btn-primary" href="{% url 'comment_remove' pk=comment.pk %}">
+                        <i class="fa-solid fa-xmark"></i>
+                    </a>
+                {% endif %}
+                <p>{{comment.text|safe|linebreaks}}</p>
+                <p>Posted By: {{comment.author}}</p>
+        {% endif %}
+        <!-- The case when there are no comments yet is considered in next two lines: -->
+        {% empty %}
+            <p>No Comments!</p>
+    {% endfor %}
+</div>
+{% endblock content %}

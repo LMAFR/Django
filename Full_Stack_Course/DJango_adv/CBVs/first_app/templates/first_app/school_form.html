@@ -1,0 +1,20 @@
+{% extends "first_app/first_app.html" %}
+
+{% block body-block %}
+
+<h1>
+    <!-- If the chosen pk does not exist, get access to the create form. In other case, get access to the update form. -->
+    {% if not form.instance.pk %}
+        Please, insert the next information about the new school:
+    {% else %}
+        Update school
+    {% endif %}
+</h1>
+
+<form method="post">
+    {% csrf_token %}
+    {{form.as_p}}
+    <input type="submit" class="btn btn-primary" value="Submit">
+</form>
+
+{% endblock %}

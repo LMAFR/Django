@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Users</title>
+</head>
+<body>
+    <h1>Here the users table is shown:</h1>
+
+    <!-- <div>
+        {% if new_db %}
+            <ol>
+                {% for row in new_db %}
+                    <li>User Info:</li>
+                    <ul>
+                        <li>First Name: {{row.fname}}</li>
+                        <li>Last Name: {{row.lname}}</li>
+                        <li>Email: {{row.email}}</li>
+                    </ul>
+                {% endfor %}
+            </ol>
+        {% else %}
+            <p>The table has not been loaded!</p>
+        {% endif %}
+    </div> -->
+
+    <div>
+        <form method="POST">
+            {{form.as_p}}
+            {% csrf_token %}
+            <input type="submit", value="Submit">
+        </form>
+    </div>
+
+</body>
+</html>

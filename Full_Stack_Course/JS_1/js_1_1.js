@@ -1,0 +1,1 @@
+// Simplemente comentar que en js tenemos null y undefined como tipos extraños.

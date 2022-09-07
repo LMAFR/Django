@@ -1,0 +1,17 @@
+li{
+  color: blue;
+}
+
+
+#myid{
+  color: green
+}
+
+.myclass{
+  color: red;
+}
+
+/* Lo he puesto en un orden cualquiera con la intención de que se vea intención */
+/* de que se vea que una orden sobre un id > una orden sobre una clase > una */
+/* orden sobre un tipo de tag. A esto y más normas jerárquicas similares se le */
+/* llama "especificidad" de CSS. */

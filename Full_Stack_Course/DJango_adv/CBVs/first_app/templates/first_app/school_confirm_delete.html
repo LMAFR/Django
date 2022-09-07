@@ -1,0 +1,12 @@
+{% extends "first_app/first_app.html" %}
+
+{% block body-block %}
+    <h1>Please confirm that you want to delete all the records about {{school.name}}:</h1>
+    <!-- The BDVs usually create the object model_name (in lowercase) as context for the the html files they require.
+    For that reason, we can call the attributes of School as school.attribute (just as was done in the line above). -->
+    <form method="post">
+        {% csrf_token %}
+        <input type="submit" class="btn btn-danger" value="Delete">
+        <a class="btn" href="{% url 'first_app:list' %}">Cancel</a>
+    </form>
+{% endblock %}

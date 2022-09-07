@@ -1,0 +1,20 @@
+body{
+  background: url(https://images.samsung.com/is/image/samsung/p5/es/smartphones/galaxy-s8/design/images/galaxy-s8-kv-background_s.jpg?$ORIGIN_JPG$);
+  background-repeat: repeat
+}
+
+div{
+  background: blue;
+  border-color: orange;
+  border-width: 5px;
+  border-style: double;
+}
+
+p{
+  color: yellow;
+}
+
+span{
+  color: black;
+  background: red;
+}

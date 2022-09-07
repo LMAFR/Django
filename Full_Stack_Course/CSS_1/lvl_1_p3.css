@@ -1,0 +1,25 @@
+.FirstDiv{
+  color: blue;
+}
+
+.SecondDiv{
+  color: red;
+}
+
+#hola{
+  color: green;
+  text-decoration: line-through;
+}
+
+h3 + ul{
+  border: 4px dotted purple;
+}
+
+li a{
+  color: red;
+}
+
+li a[href = "https://www.djangoproject.com/"]{
+  border: 2px solid orange;
+  color: blue;
+}

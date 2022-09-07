@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+{% load my_extras %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Main Page</title>
+</head>
+<body>
+    <h1>Hello! This is the main page!</h1>
+    <h2>{{ sentence|upper }}</h2>
+    <h2>{{ number|add:"99" }}</h2>
+    <h2>{{ sentence|cutting:"world" }}</h2>
+</body>
+</html>

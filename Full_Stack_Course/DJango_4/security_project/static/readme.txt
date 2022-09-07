@@ -1,0 +1,1 @@
+This folder contains the media files (for example, images) added by the administrator.

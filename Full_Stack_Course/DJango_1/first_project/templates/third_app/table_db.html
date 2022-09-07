@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Third Tag</title>
+    <link rel="stylesheet" href="{% static 'css/third_tag.css' %}">
+</head>
+<body>
+    <h1>In this tag, the AccessRecord table is shown.</h1>
+
+    <div class = "db_table">
+        {% if access_record %}
+            <table>
+                <thead>
+                    <th>Web Page</th>
+                    <th>Date Accessed</th>
+                </thead>
+                {% for acc in access_record %}
+                <tr>
+                    <td> {{ acc.name }} </td>
+                    <td> {{ acc.date }} </td>
+                </tr>
+                {% endfor %}
+            </table>
+        {% else %}
+            <p>Table has not been loaded!</p>
+        {% endif %}
+    </div>
+</body>
+</html>

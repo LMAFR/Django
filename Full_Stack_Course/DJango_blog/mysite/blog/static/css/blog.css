@@ -1,0 +1,72 @@
+.bigbrand{
+    font-size: 2em;
+}
+
+.centerstage{
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.titlefont{
+    font-family: 'Texturina', serif;
+    font-size: 1.5em;
+    margin-bottom: 10px;
+}
+
+.date{
+    text-align: center;
+}
+
+.post_title{
+    font-family: 'Texturina', serif;
+    font-size: 3em;
+    text-align: center;
+}
+
+.post_content{
+    font-family: 'Montserrat', sans-serif;
+    font-size: 1.5em;
+}
+
+.btn-comment{
+    position: absolute;
+    /* The line below put the comment all the way to the right side */
+    right: 0px;
+}
+
+/* CHANGE COLOR CLASSES */
+
+.loader {
+    color: linear-gradient(#1d8dee, #1dee74);
+    animation: filterAnimation 10s linear infinite;
+}
+
+.loader::after {
+/* content: "";
+position: absolute; */
+/* top: 0;
+left: 0;
+width: 100%;
+height: 100%; */
+color: linear-gradient(#ffbe19, #2ba6f2);
+}
+
+@keyframes tenmetu {
+0%,
+100% {
+    opacity: 0;
+}
+50% {
+    opacity: 1;
+}
+}
+
+@keyframes filterAnimation {
+0%,
+100% {
+    filter: hue-rotate(0deg);
+}
+50% {
+    filter: hue-rotate(360deg);
+}
+}

@@ -1,0 +1,17 @@
+{% extends "blog/base.html" %}
+
+{% block content %}
+    <div class="centerstage">
+        {% for post in post_list %}
+            <div class="post">
+                <h1><a href="{% url 'post_detail' pk=post.pk %}">{{post.title}}</a></h1>
+                <div class="date">
+                    <p>Published on: {{post.published|date:"D M Y"}}</p>
+                </div>
+                <!-- If we click on the number of comments of a post, we probably would like to see them, so we will redirect the user to the detailed
+                page of that post, as the comments will also be shown there -->
+                <a href="{% url 'post_detail' pk=post.pk %}">Comments: {{post.approve_comment.count}}</a>
+            </div>
+        {% endfor %}
+    </div>
+{% endblock %}
