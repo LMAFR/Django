@@ -16,20 +16,23 @@
 <body>
     <nav class="navbar navbar-expand-lg navbar-light" style="background-color: #e3f2fd;">
         <div class="container-fluid">
-          <a class="navbar-brand" href="#"><img class="logo" src="{% static 'img/python_logo.gif' %}" alt=""></a>
+          <a class="navbar-brand" href="{% url 'home' %}"><img class="logo" src="{% static 'img/python_logo.gif' %}" alt=""></a>
           <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
           </button>
           <div class="collapse navbar-collapse" id="navbarSupportedContent">
             <ul class="navbar-nav mx-auto">
               <li class="nav-item">
-                <a class="nav-link active" aria-current="page" href="#">Sectores</a>
+                <a class="nav-link active" aria-current="page" href="{% url 'sectors:all' %}">Sectores</a>
               </li>
               <li class="nav-item">
-                <a class="nav-link active" aria-current="page" href="#">Servicios</a>
+                <a class="nav-link active" aria-current="page" href="{% url 'services:all' %}">Servicios</a>
               </li>
               <li class="nav-item">
-                <a class="nav-link active" aria-current="page" href="#">Sobre Multiservicios</a>
+                <a class="nav-link active" aria-current="page" href="{% url 'about' %}">Sobre Nosotros</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link active" aria-current="page" href="{% url 'contact:contact' %}">¡Contáctanos!</a>
               </li>
             </ul>
           </div>
@@ -49,22 +52,28 @@
         </div>
       </nav>
     <div class="main_container">
-        <div class="toppane">
-            
-        </div>
+      {% block main_page %}
+        {% block offers_pane %}
+          <div class="toppane">
+              
+          </div>
+        {% endblock offers_pane %}
         <div class="leftpane">
             <img class="leftpane_img" src="{% static 'img/AE-Vertical-banner.png' %}" alt="">
         </div>
         <div class="middlepane">
-            <h1>This is the home page</h1>
+            {% block content %}
+              <h1>This is the home page</h1>
+            {% endblock content %}
         </div>
         <div class="rightpane">
             <img class="rightpane_img" src="{% static 'img/AE-Vertical-banner.png' %}" alt="">
         </div>
+      {% endblock main_page %}
     </div>
     <div class="support_container">
         <div class="bottompane">
-
+          <p>Holaa</p>
         </div>
     </div>
 </body>

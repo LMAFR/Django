@@ -64,7 +64,7 @@ body {
 .bottompane {
     height: 350px;
     margin-top: 50%;
-    background-color: green;
+    background-color: #e3f2fd;
 }
 
 /* To be able to adapt the size of the banners depending on the size of the left and rightpanes, let´s define two new classes */
