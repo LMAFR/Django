@@ -1,0 +1,1 @@
+Reference: https://www.scaleway.com/en/docs/tutorials/django-ubuntu-focal-fossa/
