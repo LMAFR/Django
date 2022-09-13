@@ -4,6 +4,7 @@ from django.core.mail import BadHeaderError, send_mail
 from django.views import generic
 from .forms import ContactForm
 from django.contrib.auth.mixins import LoginRequiredMixin
+from django.core import mail
 
 # Create your views here.
 
@@ -21,7 +22,16 @@ def contact(request):
             message = "\n".join(body.values())
 
             try:
-                send_mail(subject, message, body['email_address'], ['alejandrofloridoreyes@gmail.com'])
+                connection = mail.get_connection()
+                connection.open()
+                email = mail.EmailMessage(
+                    subject,
+                    message,
+                    body['email_address'],
+                    ['admin@example.com'],
+                    connection=connection,
+                )
+                email.send()
             # The except below prevent attackers from inserting extra email headers:
             except BadHeaderError:
                 return HttpResponse('Invalid header found.')
