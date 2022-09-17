@@ -1,0 +1,16 @@
+.carousel-inner > .item >img{
+    min-height : 50px;
+    max-height : 50px;
+    width : 100%;
+  }
+
+  .logo {
+    padding: 0;
+    display: block;
+    margin: 0 auto auto 0;
+    height: 500px;
+    width: 500px;
+    {% comment %} max-height: 100px; {% endcomment %}
+    {% comment %} max-width: 100px; {% endcomment %}
+}
+
