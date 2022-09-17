@@ -1,4 +1,6 @@
-{% extends 'contact/contact_base.html' %} {% load django_bootstrap5 %} {% block main_page %}
+{% extends 'contact/contact_base.html' %} 
+{% load django_bootstrap5 %} 
+{% block main_page %}
 <div class="container">
     <form method="post">
         {% csrf_token %} {% bootstrap_form form %}

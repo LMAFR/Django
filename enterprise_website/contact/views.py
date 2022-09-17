@@ -13,7 +13,7 @@ def contact(request):
     if request.method == 'POST':
         form = ContactForm(request.POST)
         if form.is_valid():
-            subject = "¡{} nos ha contactado!".format(form.cleaned_data['name'])
+            # subject = "¡{} nos ha contactado!".format(form.cleaned_data['name'])
             body = {
                 'email_address':form.cleaned_data['email_address'],
                 'title':form.cleaned_data['title'],
@@ -25,7 +25,7 @@ def contact(request):
                 connection = mail.get_connection()
                 connection.open()
                 email = mail.EmailMessage(
-                    subject,
+                    body['title'],
                     message,
                     body['email_address'],
                     ['admin@example.com'],
