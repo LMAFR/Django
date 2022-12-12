@@ -19,7 +19,7 @@ def snippet_list(request):
     if request.method == 'GET':
         snippets = Snippet.objects.all()
         serializer = SnippetSerializer(snippets, many=True)
-        return Response(serializer.data, safe=False)
+        return Response(serializer.data)
 
     elif request.method == 'POST':
         # We do not have to parse with JSONParser because we are using the api_view decorator, which implements that feature
@@ -29,7 +29,7 @@ def snippet_list(request):
             return Response(serializer.data, status=status.HTTP_201_CREATED)
         return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
 
-@api_view('GET', 'PUT', 'DELETE')
+@api_view(['GET', 'PUT', 'DELETE'])
 def snippet_detail(request, pk):
     """
     Retrieve, update or delete a code snippet.
